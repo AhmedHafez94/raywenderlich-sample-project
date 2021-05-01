@@ -16,6 +16,8 @@
 		A1058585263AA3C80007360B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1058583263AA3C80007360B /* LaunchScreen.storyboard */; };
 		A105858E263AA80E0007360B /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = A105858D263AA80E0007360B /* articles.json */; };
 		A1058597263AB4B20007360B /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = A1058596263AB4B20007360B /* videos.json */; };
+		A145C9FF263D4A1500B5DB21 /* myTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145C9FD263D4A1500B5DB21 /* myTableViewCell.swift */; };
+		A145CA00263D4A1500B5DB21 /* myTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A145C9FE263D4A1500B5DB21 /* myTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A1058586263AA3C80007360B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A105858D263AA80E0007360B /* articles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
 		A1058596263AB4B20007360B /* videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = videos.json; sourceTree = "<group>"; };
+		A145C9FD263D4A1500B5DB21 /* myTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTableViewCell.swift; sourceTree = "<group>"; };
+		A145C9FE263D4A1500B5DB21 /* myTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				A1058586263AA3C80007360B /* Info.plist */,
 				A105858D263AA80E0007360B /* articles.json */,
 				A1058596263AB4B20007360B /* videos.json */,
+				A145C9FD263D4A1500B5DB21 /* myTableViewCell.swift */,
+				A145C9FE263D4A1500B5DB21 /* myTableViewCell.xib */,
 			);
 			path = "raywenderlich-sample-project";
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 				A105858E263AA80E0007360B /* articles.json in Resources */,
 				A1058585263AA3C80007360B /* LaunchScreen.storyboard in Resources */,
 				A1058597263AB4B20007360B /* videos.json in Resources */,
+				A145CA00263D4A1500B5DB21 /* myTableViewCell.xib in Resources */,
 				A1058582263AA3C80007360B /* Assets.xcassets in Resources */,
 				A1058580263AA3C70007360B /* Main.storyboard in Resources */,
 			);
@@ -230,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A105857D263AA3C70007360B /* ViewController.swift in Sources */,
+				A145C9FF263D4A1500B5DB21 /* myTableViewCell.swift in Sources */,
 				A1058579263AA3C70007360B /* AppDelegate.swift in Sources */,
 				A105857B263AA3C70007360B /* SceneDelegate.swift in Sources */,
 			);

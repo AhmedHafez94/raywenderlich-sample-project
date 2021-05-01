@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(UINib(nibName: "myTableViewCell", bundle: nil), forCellReuseIdentifier: "myCell")
         
         
         
@@ -33,16 +34,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellOne", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! myTableViewCell
         if let articlesJsonWrapped = articlesJson {
             let title = articlesJsonWrapped["data"][indexPath.row]["attributes"]["name"]
             let description = articlesJsonWrapped["data"][indexPath.row]["attributes"]["description"]
             let imageUrl = articlesJsonWrapped["data"][indexPath.row]["attributes"]["card_artwork_url"].stringValue
             
-            cell.textLabel?.text = title.stringValue
-            cell.detailTextLabel?.text = description.stringValue
+//            cell.textLabel?.text = title.stringValue
+//            cell.detailTextLabel?.text = description.stringValue
 //            cell.imageView?.image = UIImage(systemName: "gear")
-            cell.imageView?.sd_setImage(with: URL(string: imageUrl),placeholderImage: UIImage(systemName: "gear"))
+//            cell.imageView?.sd_setImage(with: URL(string: imageUrl),placeholderImage: UIImage(systemName: "gear"))
+            
+            cell.titleLabel.text = title.stringValue
+            cell.descriptonLabel.text = description.stringValue
+            cell.articleImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(systemName: "gear"))
+            cell.accessoryType = .disclosureIndicator
             
         }
         
