@@ -10,7 +10,10 @@ import SwiftyJSON
 import SDWebImage
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var rowSelected: Int?
     var articlesJson: JSON?
+    var homeDescription: String = ""
+    var homeUrl: String = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,25 +39,52 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! myTableViewCell
         if let articlesJsonWrapped = articlesJson {
-            let title = articlesJsonWrapped["data"][indexPath.row]["attributes"]["name"]
-            let description = articlesJsonWrapped["data"][indexPath.row]["attributes"]["description"]
+            let title = articlesJsonWrapped["data"][indexPath.row]["attributes"]["name"].stringValue
+            let description = articlesJsonWrapped["data"][indexPath.row]["attributes"]["description"].stringValue
             let imageUrl = articlesJsonWrapped["data"][indexPath.row]["attributes"]["card_artwork_url"].stringValue
-            
+            homeUrl = imageUrl
+            homeDescription = description
 //            cell.textLabel?.text = title.stringValue
 //            cell.detailTextLabel?.text = description.stringValue
 //            cell.imageView?.image = UIImage(systemName: "gear")
 //            cell.imageView?.sd_setImage(with: URL(string: imageUrl),placeholderImage: UIImage(systemName: "gear"))
             
-            cell.titleLabel.text = title.stringValue
-            cell.descriptonLabel.text = description.stringValue
+            cell.titleLabel.text = title
+            cell.descriptonLabel.text = description
             cell.articleImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(systemName: "gear"))
             cell.accessoryType = .disclosureIndicator
+            
+            
             
         }
         
 //        cell.imageView?.backgroundColor = .green
 //        print(cell.imageView?.image )
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowSelected = indexPath.row
+        performSegue(withIdentifier: "goToDescription", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDescription" {
+            let destinationVC = segue.destination as? DescriptonViewController
+            let jsonAttr = jsonAttributes(json: articlesJson, row: rowSelected ?? 0)
+            destinationVC?.text = jsonAttr.1
+            destinationVC?.imageUrl = jsonAttr.2
+        }
+    }
+    func jsonAttributes(json: JSON?, row: Int) -> (String,String,String) {
+        if let jsonWrapped = json {
+            let title = jsonWrapped["data"][row]["attributes"]["name"].stringValue
+            let description = jsonWrapped["data"][row]["attributes"]["description"].stringValue
+            let imageUrl = jsonWrapped["data"][row]["attributes"]["card_artwork_url"].stringValue
+            return (title, description,imageUrl)
+        }
+        
+        
+        return ("title", "description","imageUrl")
     }
     
     
