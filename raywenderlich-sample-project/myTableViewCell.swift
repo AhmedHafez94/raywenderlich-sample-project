@@ -23,4 +23,12 @@ class myTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(article: Article){
+        titleLabel.text = article.attributes.name
+        descriptonLabel.text = article.attributes.description
+        articleImage.sd_setImage(with: URL(string: article.attributes.cardArtworkUrl), placeholderImage: UIImage(systemName: "gear"))
+        accessoryType = .disclosureIndicator
+        
+    }
+    
 }

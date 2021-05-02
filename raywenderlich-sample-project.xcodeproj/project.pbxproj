@@ -16,6 +16,7 @@
 		A1058585263AA3C80007360B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1058583263AA3C80007360B /* LaunchScreen.storyboard */; };
 		A105858E263AA80E0007360B /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = A105858D263AA80E0007360B /* articles.json */; };
 		A1058597263AB4B20007360B /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = A1058596263AB4B20007360B /* videos.json */; };
+		A127B138263E87F700F8165A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127B137263E87F700F8165A /* Article.swift */; };
 		A145C9FF263D4A1500B5DB21 /* myTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145C9FD263D4A1500B5DB21 /* myTableViewCell.swift */; };
 		A145CA00263D4A1500B5DB21 /* myTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A145C9FE263D4A1500B5DB21 /* myTableViewCell.xib */; };
 		A145CA03263D6BBB00B5DB21 /* DescriptonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145CA02263D6BBB00B5DB21 /* DescriptonViewController.swift */; };
@@ -35,6 +36,7 @@
 		A1058586263AA3C80007360B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A105858D263AA80E0007360B /* articles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
 		A1058596263AB4B20007360B /* videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = videos.json; sourceTree = "<group>"; };
+		A127B137263E87F700F8165A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A145C9FD263D4A1500B5DB21 /* myTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTableViewCell.swift; sourceTree = "<group>"; };
 		A145C9FE263D4A1500B5DB21 /* myTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myTableViewCell.xib; sourceTree = "<group>"; };
 		A145CA02263D6BBB00B5DB21 /* DescriptonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptonViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				A1058596263AB4B20007360B /* videos.json */,
 				A145C9FD263D4A1500B5DB21 /* myTableViewCell.swift */,
 				A145C9FE263D4A1500B5DB21 /* myTableViewCell.xib */,
+				A127B13A263E8AD800F8165A /* Model */,
 			);
 			path = "raywenderlich-sample-project";
 			sourceTree = "<group>";
@@ -120,6 +123,14 @@
 				A145CA02263D6BBB00B5DB21 /* DescriptonViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		A127B13A263E8AD800F8165A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A127B137263E87F700F8165A /* Article.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 			files = (
 				A145CA03263D6BBB00B5DB21 /* DescriptonViewController.swift in Sources */,
 				A105857D263AA3C70007360B /* ViewController.swift in Sources */,
+				A127B138263E87F700F8165A /* Article.swift in Sources */,
 				A145C9FF263D4A1500B5DB21 /* myTableViewCell.swift in Sources */,
 				A1058579263AA3C70007360B /* AppDelegate.swift in Sources */,
 				A105857B263AA3C70007360B /* SceneDelegate.swift in Sources */,
