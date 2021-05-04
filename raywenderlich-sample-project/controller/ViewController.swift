@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "myTableViewCell", bundle: nil), forCellReuseIdentifier: "myCell")
+        self.title = "Raywenderlich.com"
         
         
         
@@ -52,7 +53,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func loadData(fileName: String) -> [Article] {
         if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+//
+//                https://api.github.com/repos/raywenderlich/ios-interview/contents/Practical%20Example/articles.json
+                let fileURL = URL(fileURLWithPath: path)
+                let gitHubURL = URL(string: "https://raw.githubusercontent.com/raywenderlich/ios-interview/master/Practical%20Example/articles.json")
+                let data = try Data(contentsOf: gitHubURL!, options: .alwaysMapped)
+                print(data)
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let page = try decoder.decode(Page.self, from: data)
