@@ -8,7 +8,9 @@
 import Foundation
 
 struct Page: Decodable {
+    
     var data: [Article]
+    
 }
 struct Article: Decodable {
     var attributes: ArticleAttributes
@@ -19,6 +21,8 @@ struct ArticleAttributes: Decodable {
     let name: String
     let description: String
     let cardArtworkUrl: String
+    
+    
 
 }
 

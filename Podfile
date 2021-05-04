@@ -7,5 +7,6 @@ target 'raywenderlich-sample-project' do
 
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SDWebImage'
+  pod 'Alamofire', '~> 5.2'	
 
 end
